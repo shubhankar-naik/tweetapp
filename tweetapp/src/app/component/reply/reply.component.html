@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<form  [formGroup]="replyForm" (ngSubmit)="onSubmit(replyForm.value)" ngNativeValidate>
+    <div class="form-group" >
+        <label for="reply">Reply</label>
+        <input type="text" formControlName="reply" maxlength="50" class="form-control"  required/>
+       
+    </div><br>
+    <div class="form-group" style="text-align: center;">
+        <button class="btn btn-primary"> 
+            Submit
+        </button>
+    </div> <br>
+
+ </form>   

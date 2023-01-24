@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+
+<ul  *ngFor="let tweet of tweets"  class="card" style="margin: 0 20% 0 20%;list-style-type: none;">
+        <li>
+            <div style="display: inline-block; font-size: small;"><a [routerLink]="['/user/'+tweet.userName]" style="text-decoration: none;">{{tweet.userName}}</a></div>                        
+            <div style="font-size: small;float:right;padding-right:5px">{{tweet.date | date:'medium'}}</div>            <p>{{tweet.tweet}}</p>
+            <div>
+                <div *ngIf="tweet.likes.includes(user)" style="float: left;">
+                    <button type="button" (click)="like(tweet.tweetId)" class="btn btn-primary btn-sm">UnLike</button> {{tweet.likes.length}} likes
+                </div>
+                <div *ngIf="!tweet.likes.includes(user)" style="float: left;">
+                    <button type="button" (click)="like(tweet.tweetId)" class="btn btn-outline-primary btn-sm">Like</button> {{tweet.likes.length}} likes
+                </div>
+                <div style="float: right; margin-right: 20px;">
+                <button type="buuton" (click)="reply(tweet.tweetId)" class="btn btn-outline-primary btn-sm">Reply</button></div>
+            </div>
+        </li>
+            <hr style="margin-right: 5%;">
+            <li *ngFor="let reply of tweet.reply.reverse()">
+                <div style="display: inline-block; font-size: small;"><a [routerLink]="['/user/'+reply.userName]" style="text-decoration: none;">{{reply.userName}}</a></div>                        
+                <div style="font-size: small;float:right;padding-right:5px">{{reply.date | date:'medium'}}</div>
+                <p>{{reply.reply}}</p>
+            </li>
+</ul>

@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<form  [formGroup]="updateForm" (ngSubmit)="onSubmit(updateForm.value)" ngNativeValidate>
+    <div class="form-group" style="margin:2%">
+        <label for="tweet">Update</label>
+        <input type="text" formControlName="tweet" maxlength="144" class="form-control" [(ngModel)]="tweetBody" required/>
+       
+    </div><br>
+    <div class="form-group" style="text-align: center;">
+        <button class="btn btn-primary"> 
+            Submit
+        </button>
+    </div> <br>
+
+ </form>   

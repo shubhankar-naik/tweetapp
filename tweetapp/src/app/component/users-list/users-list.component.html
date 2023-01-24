@@ -1,0 +1,13 @@
+<div style="margin-left:2%">
+<app-navbar></app-navbar>
+<form (ngSubmit)="onSubmit(userlistForm.value)"  [formGroup]="userlistForm">
+    <div >
+    <input class="form-control m-sm-2" type="search" placeholder="Search username" formControlName="username" aria-label="Search" style="width:30%"/>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-left:10px;">Search</button>
+    </div>
+</form>
+<div style="margin:10px">{{message}}</div>
+<ul style="list-style-type: none;">
+   <li *ngFor="let user of users"> <div class="card" style="margin-right: 80%;padding:2px;margin-bottom: 2px; "><a  [routerLink]="['/user/'+user]" style="text-decoration: none;">{{ user }}</a></div></li>
+  </ul>
+</div>

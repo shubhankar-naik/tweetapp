@@ -1,0 +1,27 @@
+<div class="card" style="width: 40%;margin: 5% 30%;padding: 2%;font-size:100%;">
+    <h2 style="text-align: center;">Login</h2>
+    <form  [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" ngNativeValidate>
+        <div class="form-group" >
+            <label for="username">Username</label>
+            <input type="text" formControlName="username" class="form-control"  required/>
+           
+        </div><br>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" class="form-control"  required/>
+          
+         </div><br>
+         <div class="form-group" style="text-align: center;">
+            <button class="btn btn-primary"> 
+                Login
+            </button>
+        </div> <br>
+        <div style="color:red;font-weight: 200;text-align: center;">{{errorMessage}}</div><br>
+         <div style="text-align: center;"><a routerLink="/register" >
+           New User? Create a account here
+          </a></div>
+          <div style="text-align: center;"><a routerLink="/forgot" >
+            Forgot Password?
+           </a></div>
+    </form>
+</div>

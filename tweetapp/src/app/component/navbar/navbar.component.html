@@ -1,0 +1,9 @@
+<nav class="navbar navbar-light bg-light justify-content-between" >
+    <a class="navbar-brand">Tweetapp</a> 
+    <a routerLink="/users/all" style="text-decoration: none;">Search Users</a>
+    <a [routerLink]="['/myprofile/'+user]" style="text-decoration: none;">My Profile</a>
+    <a routerLink="/alltweets" style="text-decoration: none;">All Tweets</a>
+    
+
+    <button type="button" class="btn btn-danger" (click)="logout()" style="margin-right:5%;">Logout</button>
+</nav>
